@@ -1,6 +1,6 @@
 /*
  * 
- * Ð´Ò»¸öº¯Êý£¬ÇóÁ½¸öÕûÊýÖ®ºÍ£¬ÒªÇóÔÚº¯ÊýÌåÄÚ²»µÃÊ¹ÓÃ£«¡¢£­¡¢¡Á¡¢¡Â¡£
+ * å†™ä¸€ä¸ªå‡½æ•°ï¼Œæ±‚ä¸¤ä¸ªæ•´æ•°ä¹‹å’Œï¼Œè¦æ±‚åœ¨å‡½æ•°ä½“å†…ä¸å¾—ä½¿ç”¨ï¼‹ã€ï¼ã€Ã—ã€Ã·ã€‚
  * 
  */
 
@@ -8,7 +8,7 @@ package interview;
 
 public class GetSum {
 
-	//½øÎ»±êÖ¾
+	//è¿›ä½æ ‡å¿—
 	private static boolean carry;
 
 	public GetSum()
@@ -16,17 +16,17 @@ public class GetSum {
 		carry = false;
 	}
 
-	//ÇóºÍ
+	//æ±‚å’Œ
 	public void sum(int a, int b)
 	{
 		int first = a;
 		int second = b;
-		System.out.println("´ýÇóºÍµÄÁ½¸öÊý£º");
+		System.out.println("å¾…æ±‚å’Œçš„ä¸¤ä¸ªæ•°ï¼š");
 		System.out.println(first);
 		System.out.println(second);
 		int sum = singlesum(first,second);
 		
-		System.out.println("Á½ÊýÖ®ºÍÎª£º");
+		System.out.println("ä¸¤æ•°ä¹‹å’Œä¸ºï¼š");
 		if(carry == true)
 		{
 			System.out.print("1");
@@ -36,7 +36,7 @@ public class GetSum {
 			System.out.println(sum);
 	}
 	
-	//±È½Ï²¢·µ»Ø¸ÃÎ»½á¹û
+	//æ¯”è¾ƒå¹¶è¿”å›žè¯¥ä½ç»“æžœ
 	private int singlesum(int first, int second) {
 		// TODO Auto-generated method stub
 		if(first > second)
@@ -121,7 +121,7 @@ public class GetSum {
 		return -1;
 	}
 	
-	//ÓÐ½øÎ»µÄÇé¿ö£¬±ÈÕý³£¶à·µ»Ø1
+	//æœ‰è¿›ä½çš„æƒ…å†µï¼Œæ¯”æ­£å¸¸å¤šè¿”å›ž1
 	private int carrysum(int first, int second) {
 		// TODO Auto-generated method stub
 		if(first > second)
