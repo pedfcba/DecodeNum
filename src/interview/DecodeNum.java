@@ -1,3 +1,8 @@
+/*****
+ç¿»è¯‘æ•°å­—ä¸²ï¼Œç±»ä¼¼äºŽç”µè¯å·ç ç¿»è¯‘ï¼šç»™ä¸€ä¸ªæ•°å­—ä¸²ï¼Œæ¯”å¦‚12259ï¼Œæ˜ å°„åˆ°å­—æ¯æ•°ç»„ï¼Œæ¯”å¦‚ï¼Œ1 -> aï¼Œ 2-> bï¼Œ... ï¼Œ 12 -> l ï¼Œ... 26-> zã€‚é‚£ä¹ˆï¼Œ12259 -> lyi æˆ– abbei æˆ– lbei æˆ– abyiã€‚è¾“å…¥ä¸€ä¸ªæ•°å­—ä¸²ï¼Œåˆ¤æ–­æ˜¯å¦èƒ½è½¬æ¢æˆå­—ç¬¦ä¸²ï¼Œå¦‚æžœèƒ½ï¼Œåˆ™æ‰“å°æ‰€ä»¥æœ‰å¯èƒ½çš„è½¬æ¢æˆçš„å­—ç¬¦ä¸²ã€‚
+****/
+
+
 package interview;
 
 import java.util.HashMap;
@@ -13,7 +18,7 @@ public class DecodeNum {
 		init();
 	}
 
-	//³õÊ¼»¯Êý×Ö-×ÖÄ¸¶ÔÓ¦µÄmapÈÝÆ÷
+	//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ä¸ï¿½ï¿½Ó¦ï¿½ï¿½mapï¿½ï¿½ï¿½ï¿½
 	private void init()
 	{
 		char cha = 'a';
@@ -21,18 +26,18 @@ public class DecodeNum {
 			map.put(i, cha);
 	}
 
-	//½âÂëÊý×Ö
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void decode(int num)
 	{
 		String s = "";
 		int count = countNumd(num);
-		System.out.println("´ý½âÂëÊý×Ö£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½");
 		System.out.println(num);
-		System.out.println("¿É½âÂëÎª£º");
+		System.out.println("ï¿½É½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		decoding(num, s, 0, count);
 	}
 
-	//numÎª´ý½âÂëÊý×Ö£¬sÎªµ±Ç°ÒÑ½âÂëµÄ×Ö·û´®£¬ccountÎªÊý×ÖÒÑ½âÂëÎ»Êý£¬countÎªÊý×Ö×ÜÎ»Êý
+	//numÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½sÎªï¿½ï¿½Ç°ï¿½Ñ½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ccountÎªï¿½ï¿½ï¿½ï¿½ï¿½Ñ½ï¿½ï¿½ï¿½Î»ï¿½ï¿½countÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 	private void decoding(int num, String s, int ccount, int count) {
 		// TODO Auto-generated method stub
 		if(num == 0)
@@ -46,34 +51,34 @@ public class DecodeNum {
 		int temp = num;
 		String ttemp = s;
 		String htemp = s;
-		//Ò»Î»Êý¼ÆÊý
+		//Ò»Î»ï¿½ï¿½ï¿½ï¿½ï¿½
 		int scount = ccount;
-		//Á½Î»Êý¼ÆÊý
+		//ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½
 		int dcount = ccount;
 
-		//Óë100µÄÓàÊý
+		//ï¿½ï¿½100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int hun = temp % 100;
-		//Óë10µÄÓàÊý
+		//ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int ten = temp % 10;	
 
-		//Õë¶ÔÒ»Î»ÊýÒÆ¶¯£¬Óë100ÏàÓàÊÇÁ½Î»ÊýµÄ£¬½âÂëÄ©Î»ºÍÊ×Î»²¢ÒÆ¶¯
+		//ï¿½ï¿½ï¿½Ò»Î»ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½Ä©Î»ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Æ¶ï¿½
 		if(hun >= 10)
 		{
-			//Ä©Î»²»ÎªÁã£¬È¡Ä©Î»£¬ÒÆ¶¯Ò»Î»
+			//Ä©Î»ï¿½ï¿½Îªï¿½ã£¬È¡Ä©Î»ï¿½ï¿½ï¿½Æ¶ï¿½Ò»Î»
 			if(ten > 0)
 			{
 				htemp += map.get(ten);
 				dcount++;
 				decoding(temp/10, htemp, dcount, count);
 			}
-			//Ä©Î»Îª0µÄÕûÊý£¬ÎÞ·¨È¡Êý£¬ÒÆ¶¯Á½Î»
+			//Ä©Î»Îª0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½È¡ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Î»
 			else if (ten == 0)
 			{
 				dcount += 2;
 				htemp += map.get(hun);
 				decoding(temp/100, htemp, dcount, count);
 			}
-			//Á½Î»Êý¿É¹¹³É×ÖÄ¸µÄ
+			//ï¿½Î»ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½
 			if(hun <= 26)
 			{
 				scount += 2;
@@ -81,10 +86,10 @@ public class DecodeNum {
 				decoding(temp/100, ttemp, scount, count);
 			}
 		}
-		//Óë100ÏàÓàÊÇÒ»Î»Êý£¬Ö»¶ÔÄ©Î»½øÐÐ¼ÇÂ¼ºÍ½âÂë
+		//ï¿½ï¿½100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Î»ï¿½ï¿½Ö»ï¿½ï¿½Ä©Î»ï¿½ï¿½ï¿½Ð¼ï¿½Â¼ï¿½Í½ï¿½ï¿½ï¿½
 		else
 		{
-			//È¡Êý£¬ÒÆ¶¯Ò»Î»
+			//È¡ï¿½ï¿½ï¿½Æ¶ï¿½Ò»Î»
 			if(temp/100 != 0)
 			{
 				dcount++;
@@ -97,7 +102,7 @@ public class DecodeNum {
 		}
 	}
 
-	//·´×ª×Ö·û´®
+	//ï¿½ï¿½×ªï¿½Ö·ï¿½
 	private void reversOut(String s) {
 		// TODO Auto-generated method stub
 		for(int i = s.length()-1; i >= 0; i--)
@@ -105,7 +110,7 @@ public class DecodeNum {
 		System.out.println();
 	}
 
-	//¼ÆËãÊý×ÖÎ»Êý
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 	private int countNumd(int num) {
 		// TODO Auto-generated method stub
 		int count = 0;
