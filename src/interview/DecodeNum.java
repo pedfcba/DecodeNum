@@ -1,3 +1,7 @@
+/*****
+翻译数字串，类似于电话号码翻译：给一个数字串，比如12259，映射到字母数组，比如，1 -> a， 2-> b，... ， 12 -> l ，... 26-> z。那么，12259 -> lyi 或 abbei 或 lbei 或 abyi。输入一个数字串，判断是否能转换成字符串，如果能，则打印所以有可能的转换成的字符串。
+****/
+
 package interview;
 
 import java.util.HashMap;
@@ -84,6 +88,12 @@ public class DecodeNum {
 		//与100相余是一位数，只对末位进行记录和解码
 		else
 		{
+			if(hun == 0)
+			{
+				System.out.println("存在无法转换的数");
+				return;
+			}
+				
 			//取数，移动一位
 			if(temp/100 != 0)
 			{
