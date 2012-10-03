@@ -1,6 +1,6 @@
 /*****
-缈昏瘧鏁板瓧涓诧紝绫讳技浜庣數璇濆彿鐮佺炕璇戯細缁欎竴涓暟瀛椾覆锛屾瘮濡�2259锛屾槧灏勫埌瀛楁瘝鏁扮粍锛屾瘮濡傦紝1 -> a锛�2-> b锛�.. 锛�12 -> l 锛�.. 26-> z銆傞偅涔堬紝12259 -> lyi 鎴�abbei 鎴�lbei 鎴�abyi銆傝緭鍏ヤ竴涓暟瀛椾覆锛屽垽鏂槸鍚﹁兘杞崲鎴愬瓧绗︿覆锛屽鏋滆兘锛屽垯鎵撳嵃鎵�互鏈夊彲鑳界殑杞崲鎴愮殑瀛楃涓层�
-****/
+翻译数字串，类似于电话号码翻译：给一个数字串，比如12259，映射到字母数组，比如，1 -> a， 2-> b，... ， 12 -> l ，... 26-> z。那么，12259 -> lyi 或 abbei 或 lbei 或 abyi。输入一个数字串，判断是否能转换成字符串，如果能，则打印所以有可能的转换成的字符串。
+ ****/
 
 package interview;
 
@@ -17,7 +17,7 @@ public class DecodeNum {
 		init();
 	}
 
-	//鍒濆鍖栨暟瀛�瀛楁瘝瀵瑰簲鐨刴ap瀹瑰櫒
+	//初始化数字-字母对应的map容器
 	private void init()
 	{
 		char cha = 'a';
@@ -25,18 +25,18 @@ public class DecodeNum {
 			map.put(i, cha);
 	}
 
-	//瑙ｇ爜鏁板瓧
+	//解码数字
 	public void decode(int num)
 	{
 		String s = "";
 		int count = countNumd(num);
-		System.out.println("寰呰В鐮佹暟瀛楋細");
+		System.out.println("待解码数字：");
 		System.out.println(num);
-		System.out.println("鍙В鐮佷负锛");
+		System.out.println("可解码为：");
 		decoding(num, s, 0, count);
 	}
 
-	//num涓哄緟瑙ｇ爜鏁板瓧锛宻涓哄綋鍓嶅凡瑙ｇ爜鐨勫瓧绗︿覆锛宑count涓烘暟瀛楀凡瑙ｇ爜浣嶆暟锛宑ount涓烘暟瀛楁�浣嶆暟
+	//num为待解码数字，s为当前已解码的字符串，ccount为数字已解码位数，count为数字总位数
 	private void decoding(int num, String s, int ccount, int count) {
 		// TODO Auto-generated method stub
 		if(num == 0)
@@ -50,34 +50,34 @@ public class DecodeNum {
 		int temp = num;
 		String ttemp = s;
 		String htemp = s;
-		//涓�綅鏁拌鏁�
+		//一位数计数
 		int scount = ccount;
-		//涓や綅鏁拌鏁�
+		//两位数计数
 		int dcount = ccount;
 
-		//涓�00鐨勪綑鏁�
+		//与100的余数
 		int hun = temp % 100;
-		//涓�0鐨勪綑鏁�
-		int ten = temp % 10;	
+		//与10的余数
+		int ten = temp % 10;
 
-		//閽堝涓�綅鏁扮Щ鍔紝涓�00鐩镐綑鏄袱浣嶆暟鐨勶紝瑙ｇ爜鏈綅鍜岄浣嶅苟绉诲姩
+		//针对一位数移动，与100相余是两位数的，解码末位和首位并移动
 		if(hun >= 10)
 		{
-			//鏈綅涓嶄负闆讹紝鍙栨湯浣嶏紝绉诲姩涓�綅
+			//末位不为零，取末位，移动一位
 			if(ten > 0)
 			{
 				htemp += map.get(ten);
 				dcount++;
 				decoding(temp/10, htemp, dcount, count);
 			}
-			//鏈綅涓�鐨勬暣鏁帮紝鏃犳硶鍙栨暟锛岀Щ鍔ㄤ袱浣�
+			//末位为0的整数，无法取数，移动两位
 			else if (ten == 0)
 			{
 				dcount += 2;
 				htemp += map.get(hun);
 				decoding(temp/100, htemp, dcount, count);
 			}
-			//涓や綅鏁板彲鏋勬垚瀛楁瘝鐨�
+			//两位数可构成字母的
 			if(hun <= 26)
 			{
 				scount += 2;
@@ -85,29 +85,29 @@ public class DecodeNum {
 				decoding(temp/100, ttemp, scount, count);
 			}
 		}
-		//涓�00鐩镐綑鏄竴浣嶆暟锛屽彧瀵规湯浣嶈繘琛岃褰曞拰瑙ｇ爜
+		//与100相余是一位数，只对末位进行记录和解码
 		else
 		{
 			if(hun == 0)
 			{
-				System.out.println("瀛樺湪鏃犳硶杞崲鐨勬暟");
+				System.out.println("存在无法转换的数");
 				return;
 			}
-				
-			//鍙栨暟锛岀Щ鍔ㄤ竴浣�
+
+			//取数，移动一位
 			if(temp/100 != 0)
 			{
 				dcount++;
 				htemp += map.get(ten);
 				decoding(temp/10, htemp, dcount, count);
 			}
-			htemp += map.get(ten);	
+			htemp += map.get(ten);
 			dcount++;
 			decoding(temp/10, htemp, dcount, count);
 		}
 	}
 
-	//鍙嶈浆瀛楃涓�
+	//反转字符串
 	private void reversOut(String s) {
 		// TODO Auto-generated method stub
 		for(int i = s.length()-1; i >= 0; i--)
@@ -115,7 +115,7 @@ public class DecodeNum {
 		System.out.println();
 	}
 
-	//璁＄畻鏁板瓧浣嶆暟
+	//计算数字位数
 	private int countNumd(int num) {
 		// TODO Auto-generated method stub
 		int count = 0;

@@ -1,14 +1,14 @@
 /*
- * 
- * å†™ä¸€ä¸ªå‡½æ•°ï¼Œæ±‚ä¸¤ä¸ªæ•´æ•°ä¹‹å’Œï¼Œè¦æ±‚åœ¨å‡½æ•°ä½“å†…ä¸å¾—ä½¿ç”¨ï¼‹ã€ï¼ã€Ã—ã€Ã·ã€‚
- * 
+ *
+ * Ð´Ò»¸öº¯Êý£¬ÇóÁ½¸öÕûÊýÖ®ºÍ£¬ÒªÇóÔÚº¯ÊýÌåÄÚ²»µÃÊ¹ÓÃ£«¡¢£­¡¢¡Á¡¢¡Â¡£
+ *
  */
 
 package interview;
 
 public class GetSum {
 
-	//è¿›ä½æ ‡å¿—
+	//½øÎ»±êÖ¾
 	private static boolean carry;
 
 	public GetSum()
@@ -16,17 +16,17 @@ public class GetSum {
 		carry = false;
 	}
 
-	//æ±‚å’Œ
+	//ÇóºÍ
 	public void sum(int a, int b)
 	{
 		int first = a;
 		int second = b;
-		System.out.println("å¾…æ±‚å’Œçš„ä¸¤ä¸ªæ•°ï¼š");
+		System.out.println("´ýÇóºÍµÄÁ½¸öÊý£º");
 		System.out.println(first);
 		System.out.println(second);
 		int sum = singlesum(first,second);
-		
-		System.out.println("ä¸¤æ•°ä¹‹å’Œä¸ºï¼š");
+
+		System.out.println("Á½ÊýÖ®ºÍÎª£º");
 		if(carry == true)
 		{
 			System.out.print("1");
@@ -35,8 +35,8 @@ public class GetSum {
 		else
 			System.out.println(sum);
 	}
-	
-	//æ¯”è¾ƒå¹¶è¿”å›žè¯¥ä½ç»“æžœ
+
+	//±È½Ï²¢·µ»Ø¸ÃÎ»½á¹û
 	private int singlesum(int first, int second) {
 		// TODO Auto-generated method stub
 		if(first > second)
@@ -45,7 +45,7 @@ public class GetSum {
 		{
 			if (first == 0)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 0;
 		}
@@ -53,15 +53,15 @@ public class GetSum {
 		{
 			if (first == 0)
 				carry = false;
-			else 
-				carry = true;			
+			else
+				carry = true;
 			return 1;
 		}
 		if(first == 0 && second == 2 || first == 1 && second == 1 || first == 3 && second == 9 || first == 4 && second == 8 || first == 5 && second == 7 || first == 6 && second == 6)
 		{
 			if (first == 0 || first == 1)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 2;
 		}
@@ -69,7 +69,7 @@ public class GetSum {
 		{
 			if (first == 0 || first == 1)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 3;
 		}
@@ -77,7 +77,7 @@ public class GetSum {
 		{
 			if (first == 0)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 4;
 		}
@@ -85,7 +85,7 @@ public class GetSum {
 		{
 			if (first == 0 || first == 1 || first == 2)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 5;
 		}
@@ -93,7 +93,7 @@ public class GetSum {
 		{
 			if (first == 0 || first == 1 || first == 2 || first == 3)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 6;
 		}
@@ -101,7 +101,7 @@ public class GetSum {
 		{
 			if (first != 8)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 7;
 		}
@@ -109,7 +109,7 @@ public class GetSum {
 		{
 			if (first != 9)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 8;
 		}
@@ -120,8 +120,8 @@ public class GetSum {
 		}
 		return -1;
 	}
-	
-	//æœ‰è¿›ä½çš„æƒ…å†µï¼Œæ¯”æ­£å¸¸å¤šè¿”å›ž1
+
+	//ÓÐ½øÎ»µÄÇé¿ö£¬±ÈÕý³£¶à·µ»Ø1
 	private int carrysum(int first, int second) {
 		// TODO Auto-generated method stub
 		if(first > second)
@@ -130,7 +130,7 @@ public class GetSum {
 		{
 			if (first == 0)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 1;
 		}
@@ -138,15 +138,15 @@ public class GetSum {
 		{
 			if (first == 0)
 				carry = false;
-			else 
-				carry = true;			
+			else
+				carry = true;
 			return 2;
 		}
 		if(first == 0 && second == 2 || first == 1 && second == 1 || first == 3 && second == 9 || first == 4 && second == 8 || first == 5 && second == 7 || first == 6 && second == 6)
 		{
 			if (first == 0 || first == 1)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 3;
 		}
@@ -154,7 +154,7 @@ public class GetSum {
 		{
 			if (first == 0 || first == 1)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 4;
 		}
@@ -162,7 +162,7 @@ public class GetSum {
 		{
 			if (first == 0)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 5;
 		}
@@ -170,7 +170,7 @@ public class GetSum {
 		{
 			if (first == 0 || first == 1 || first == 2)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 6;
 		}
@@ -178,7 +178,7 @@ public class GetSum {
 		{
 			if (first == 0 || first == 1 || first == 2 || first == 3)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 7;
 		}
@@ -186,7 +186,7 @@ public class GetSum {
 		{
 			if (first != 8)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 8;
 		}
@@ -194,7 +194,7 @@ public class GetSum {
 		{
 			if (first != 9)
 				carry = false;
-			else 
+			else
 				carry = true;
 			return 9;
 		}
